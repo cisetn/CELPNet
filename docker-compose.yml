@@ -1,0 +1,15 @@
+version: '2.3'
+services:
+  pytorch:
+    restart: always
+    build: .
+    runtime: nvidia
+    container_name: sample
+    working_dir: '/root/workspace'
+    tty: true
+    user: 6008:6008
+    volumes:
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+      - /data/corpus:/root/corpus:ro
+      - ./src:/root/workspace

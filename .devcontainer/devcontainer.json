@@ -1,0 +1,56 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.202.3/containers/python-3
+{
+    "name": "pytorch",
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+    "service": "pytorch",
+    "workspaceFolder": "/root/workspace",
+    "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "HookyQR.beautify",
+        "sukumo28.wav-preview",
+        "njpwerner.autodocstring"
+    ],
+    // Set *default* container specific settings.json values on container create.
+    "settings": {
+        "terminal.integrated.profiles.linux": {
+            "bash": {
+                "path": "/bin/bash"
+            }
+        },
+        // "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "python.formatting.provider": "yapf",
+        // "python.languageServer": "Default",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.formatting.yapfArgs": [
+            "--style",
+            "{based_on_style: google, indent_width: 4, column_limit: 100}"
+        ],
+        "python.formatting.blackArgs": [
+            "--line-length",
+            "100"
+        ],
+        "python.linting.flake8Enabled": true,
+        "python.linting.lintOnSave": true,
+        "python.linting.flake8Args": [
+            "--ignore=E124,E128,E501,W503",
+            "--max-line-length=100"
+        ],
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "files.watcherExclude": {
+            "**/.pyenv/**": true
+        },
+        "autoDocstring.docstringFormat": "google",
+        "beautify.config": "",
+        "[json]": {
+            "editor.defaultFormatter": "HookyQR.beautify"
+        }
+}

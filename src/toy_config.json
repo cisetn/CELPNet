@@ -1,0 +1,42 @@
+{
+
+    "discriminator_scales": [2, 2],
+
+    "codebook_size": 512,
+    "hidden_channels": 128,
+
+    "sampling_rate": 24000,
+    "window_length": 512,
+
+    "n_fft": 2048,
+    "hop_length": 300,
+    "win_length": 1200,
+    "n_mel_channels": 80,
+    "mel_fmin": 0,
+    "mel_fmax": 8000,
+
+    "batch_size": 1,
+    "seq_len": 9600,
+    "learning_rate_g": 2e-4,
+    "learning_rate_d": 2e-4,
+
+    "num_epoch": 100000,
+
+    "lambda_adv": 1.0,
+    "lambda_fm": 2.0,
+    "lambda_mel": 45.0,
+    "lambda_cr": 10.0,
+
+    "log_interval": 1,
+    "save_interval": 10,
+    "eval_interval": 50,
+
+    "num_test_files": 10,
+    "num_valid_files": 7,
+    "n_test_samples": 3,
+
+    "hop_size": 512,
+    "frame_size": 512,
+    "lpc_order": 24,
+    "window": "hanning"
+}
